@@ -20,6 +20,7 @@ jobs:
           docker run -d -p 3000:3000 --name ci-cd-intro-python ci-cd-intro-python
           sleep 5
           curl http://localhost:3000 || exit 1
-          docker stop ci-cd-intro-python 
+
+          docker stop ci-cd-intro-python 2>/dev/null || true
       # - name: Run tests
       #   run: docker run ci-cd-intro-python pytest
